@@ -12,26 +12,26 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        enforce: 'pre',
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader',
-      },
+      // {
+      //   enforce: 'pre',
+      //   test: /\.(js|jsx)$/,
+      //   exclude: /node_modules/,
+      //   loader: 'eslint-loader',
+      // },
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules)/,
         loader: 'babel-loader',
         query: {
           presets: ['es2015'],
-          plugins: ['babel-plugin-add-module-exports'],
-        },
-      },
+          plugins: ['babel-plugin-add-module-exports']
+        }
+      }
     ]
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
-      minimize: true,
-    }),
-  ],
+      minimize: true
+    })
+  ]
 };
